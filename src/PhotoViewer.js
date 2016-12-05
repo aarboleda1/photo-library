@@ -1,15 +1,11 @@
 import React from 'react';
-const PhotoViewer = ({photo}) => {
-
-    return (
-      <img alt={photo} src={photo}></img>
-    ) 
-  
+const PhotoViewer = (props) => {
+  return (
+    <img alt={props} src={props.photo}></img>
+  )   
 }
 
-// PhotoViewer.proptypes = {
-//   photo: React.PropTypes.object.isRequired
-// } 
+
 
 
 export default PhotoViewer; 

@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PhotoListEntry extends Component {
-  constructor (props) {
-    super(props);
-    // this.handleClick = this.handleClick.bind(this);
-  }
-
-  // handleClick = () => {
-  //   // should change state of photoViewer
-  //   console.log('this is:', this.props);
-  //   this.setState({photo: this.props.photo.image})
-  // }
-
-  render () {
+const PhotoListEntry = (props) => {
     return (
-      <tr onClick={() => this.props.onPhotoSelect(this.props.photo.image)} className="photo-list-entry">
-        <td className="title">{this.props.photo.name}</td>
+      <tr onClick={() => props.onPhotoSelect(props.photo.image)} className="photo-list-entry">
+        <td className="title">{props.photo.name}</td>
       </tr>
 
     ) 
-  }
 };
 
 PhotoListEntry.proptypes = {

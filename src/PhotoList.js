@@ -1,5 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PhotoListEntry from './PhotoListEntry'
+
+const PhotoList = (props) => {
+    return (
+      <table>
+        <tbody>
+          {props.photoList.map((photo, index) => {
+            return <PhotoListEntry onPhotoSelect={props.onPhotoSelect} key={index} photo={photo} />
+          })}
+        </tbody>
+      </table>
+    ) 
+}
+
+PhotoList.proptypes = {
+  photoList: React.PropTypes.array.isRequired
+} 
+
+
+
+
+export default PhotoList; 
+
 var photoData = [
   {
     name: 'Goldfish',
@@ -27,29 +49,4 @@ var photoData = [
     description: 'Desert Point'
   }
 ];
-
-
-
-class PhotoList extends Component {
-  constructor (props) {
-    super(props)
-  }
-  render () {
-    return (
-      <table>
-        <tbody>
-          {photoData.map((photo) => {
-            return <PhotoListEntry onPhotoSelect={this.props.onPhotoSelect} key={photo.name} photo={photo} />
-          })}
-        </tbody>
-      </table>
-    ) 
-  }
-}
-
-PhotoList.proptypes = {
-  photoList: React.PropTypes.array.isRequired
-} 
-
-export default PhotoList; 
-
+window.photoData = photoData;
