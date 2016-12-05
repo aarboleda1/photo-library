@@ -31,12 +31,15 @@ var photoData = [
 
 
 class PhotoList extends Component {
+  constructor (props) {
+    super(props)
+  }
   render () {
     return (
       <table>
         <tbody>
           {photoData.map((photo) => {
-            return <PhotoListEntry key={photo.name} photo={photo} />
+            return <PhotoListEntry onPhotoSelect={this.props.onPhotoSelect} key={photo.name} photo={photo} />
           })}
         </tbody>
       </table>

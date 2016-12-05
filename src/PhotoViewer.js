@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+const PhotoViewer = ({photo}) => {
 
-class PhotoViewer extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      photo: 'http://tinyurl.com/n4vgcl5' 
-    }
-  }
-  render () {
     return (
-      <img alt={this.state.photo} src={this.state.photo}></img>
+      <img alt={photo} src={photo}></img>
     ) 
-  }
+  
 }
 
 // PhotoViewer.proptypes = {

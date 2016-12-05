@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 class PhotoListEntry extends Component {
   constructor (props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = () => {
-    // should change state of photoViewer
-    console.log('this is:', this.props);
-    this.setState({photo: this.props.photo.image})
-  }
+  // handleClick = () => {
+  //   // should change state of photoViewer
+  //   console.log('this is:', this.props);
+  //   this.setState({photo: this.props.photo.image})
+  // }
 
   render () {
     return (
-      <tr onClick={(e) => this.handleClick(e)} className="photo-list-entry">
+      <tr onClick={() => this.props.onPhotoSelect(this.props.photo.image)} className="photo-list-entry">
         <td className="title">{this.props.photo.name}</td>
       </tr>
 
