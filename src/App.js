@@ -13,7 +13,10 @@ class App extends Component {
     }
   }
 
-  receiveForm(photo) {   
+  receiveForm(photo) {
+    if (!photo.name || !photo.image) {
+      alert('not a photo')
+    } else {
     var newPhoto = {
       image: photo.image,
       name: photo.name
@@ -23,6 +26,8 @@ class App extends Component {
       photo: photo.image,
       photoList: this.props.photoList
     });
+
+    }
   }
 
   render() {
